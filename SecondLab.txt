@@ -1,0 +1,109 @@
+C:\Users\GinnS>git clone https://github.com/GinnSun/test_2.git
+Cloning into 'test_2'...
+info: please complete authentication in your browser...
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (6/6), done.
+
+C:\Users\GinnS>git log
+fatal: your current branch 'master' does not have any commits yet
+
+C:\Users\GinnS>cd test_2
+
+C:\Users\GinnS\test_2>git log
+commit 3f9589007887a9e6834be0fad01969a856d07d97 (HEAD -> main, origin/main, origin/HEAD)
+Author: GinnSun <93585193+GinnSun@users.noreply.github.com>
+Date:   Thu Mar 2 14:56:37 2023 +0500
+
+    Update text of README
+
+commit fb53a2b9d3a5a832e40a9fb8161cd9919e058dda
+Author: GinnSun <93585193+GinnSun@users.noreply.github.com>
+Date:   Thu Mar 2 14:55:02 2023 +0500
+
+    Initial commit
+
+C:\Users\GinnS\test_2>get remote add github https://github.com/GinnSun/test_2.git
+'get' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\GinnS\test_2>git remote add github https://github.com/GinnSun/test_2.git
+
+C:\Users\GinnS\test_2>git remote -v
+github  https://github.com/GinnSun/test_2.git (fetch)
+github  https://github.com/GinnSun/test_2.git (push)
+origin  https://github.com/GinnSun/test_2.git (fetch)
+origin  https://github.com/GinnSun/test_2.git (push)
+
+C:\Users\GinnS\test_2>git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        info.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\GinnS\test_2>git add info.txt
+
+C:\Users\GinnS\test_2>git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   info.txt
+
+
+C:\Users\GinnS\test_2>git commit -m "Add info.txt"
+[main 00ddd16] Add info.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 info.txt
+
+C:\Users\GinnS\test_2>git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+C:\Users\GinnS\test_2>git log
+commit 00ddd16a94045dc625fc19706a08c28e9b42adee (HEAD -> main)
+Author: glebkotek <gkotkovec@mail.ru>
+Date:   Thu Mar 2 15:06:10 2023 +0500
+
+    Add info.txt
+
+commit 3f9589007887a9e6834be0fad01969a856d07d97 (origin/main, origin/HEAD)
+Author: GinnSun <93585193+GinnSun@users.noreply.github.com>
+Date:   Thu Mar 2 14:56:37 2023 +0500
+
+    Update text of README
+
+commit fb53a2b9d3a5a832e40a9fb8161cd9919e058dda
+Author: GinnSun <93585193+GinnSun@users.noreply.github.com>
+Date:   Thu Mar 2 14:55:02 2023 +0500
+
+    Initial commit
+
+C:\Users\GinnS\test_2>got push -u github master
+'got' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\GinnS\test_2>git push -u github master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://github.com/GinnSun/test_2.git'
+
+C:\Users\GinnS\test_2>git push -u github main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 300 bytes | 300.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/GinnSun/test_2.git
+   3f95890..00ddd16  main -> main
+branch 'main' set up to track 'github/main'.
